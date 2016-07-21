@@ -10,14 +10,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Contact</li>
-  </ul>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid navi">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">My App</a>
+    </div>
+    <nav class="navbar-collapse collapse">
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="#">INDEX</a></li>
+             <li><a href="#">ABOUT</a></li>
+             <li><a href="#">CONTACT</a></li>
+             <li role="presentation" class="dropdown">       
+                 <ul class="dropdown-menu">
+                   <li><a href="#">ABOUT</a></li>
+                   <li><a href="#">CONTACT</a></li>
+                 </ul>
+               </li>
+             </ul>
+
+         </div> <!-- end nav container -->
+    </nav> <!-- end navbar -->
 <%= yield %>
-<footer>
-  &copy; 2015 Bike Berlin
+<footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <span>&copy; 2016 Bike Berlin</span>
+  </div>
 </footer>
 </body>
 </html>

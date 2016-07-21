@@ -1,3 +1,28 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+	font-family: Sans Serif;
+	color: Black;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+p  {
+	text-align: center;
+}
+.navi {
+	background-color: #62bcfa;
+}
+
+.navbar-fixed-bottom {
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.footer{
+    background-color:fccdd3;	
+} 
