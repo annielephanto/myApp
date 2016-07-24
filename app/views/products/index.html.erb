@@ -2,19 +2,12 @@
 
 <h1>Listing Products</h1>
 
-<div class="container-fluid">
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-2 col-md-4">
-       <%= image_tag("spot.jpg", class: "img-responsive") %>
-        <h1><%= product.name %>/h1>
-        <p><%= product.description %></p>
-        <strong>$ 42</strong>
-      </div><!-- /col -->
-    <% end %>
-  </div>
-</div>
-                   
-<br>
-<%= link_to 'New Product', new_product_path %>
 
+  <%= render 'product' %>
+
+ 
+
+<div class="productfooter">
+  <br>
+    <%= link_to 'New Product', new_product_path %>
+</div>
