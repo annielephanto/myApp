@@ -20,7 +20,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bike Berlin</a>
+       <a class="navbar-brand" href="/static_pages/landing_page.html">Berlin Bikes</a>
+      
     </div>
     
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -34,11 +35,11 @@
           <li><a href="<%= products_path %>">Products</a></li>
           <li><a href="<%= static_pages_about_path %>">About</a></li>
           <li><a href="<%= static_pages_contact_path %>">Contact</a></li>
+         <%= form_tag("/products", class:"navbar-form navbar-left", role:"search", method:"get") do %>
+         <%= content_tag(:div, text_field_tag('q', nil, class:"form-control", placeholder:"search"), class:"form-group") %>
+        <%= submit_tag("Search", class:"btn btn-default") %>  
         </ul>
-        <%= form_tag("/products", method: "get") do %>
-        <%= label_tag(:q, "Search for:") %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Search") %>
+
 <% end %>
      </div>
     </div>
