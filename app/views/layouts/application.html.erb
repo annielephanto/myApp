@@ -39,11 +39,22 @@
          <%= content_tag(:div, text_field_tag('q', nil, class:"form-control", placeholder:"search"), class:"form-group") %>
         <%= submit_tag("Search", class:"btn btn-default") %>  
         </ul>
-
+        <ul class="nav pull-right">
+          <li>
+           <% if user_signed_in? %>
+            <%=link_to('Logout', destroy_user_session_path, :method => :delete) %>
+           <% else %>
+             <%=link_to('Login', new_user_session_path) %>
+          <% end %>
+          </li>
+        </ul>
+           
 <% end %>
      </div>
     </div>
     </nav> <!-- end navbar -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert%></p>
 <%= yield %>
 <footer class="navbar-default navbar-fixed-bottom">
   <div class="container-fluid">
