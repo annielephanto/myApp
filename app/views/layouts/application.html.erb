@@ -53,8 +53,16 @@
      </div>
     </div>
     </nav> <!-- end navbar -->
+    <% if notice %>
+  <div class="alert alert-warning" role="alert" id="alert">
     <p class="notice"><%= notice %></p>
+    </div>
+    <% end %>
+    <% if alert %>
+  <div class="alert alert-warning" role="alert" id="alert">
     <p class="alert"><%= alert%></p>
+   </div>
+  <% end %>  
 <%= yield %>
 <footer class="navbar-default navbar-fixed-bottom">
   <div class="container-fluid">
