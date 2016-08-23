@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  resources :products
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
-  resources :products do
-   resources :comments
-   end
-  resources :users
+ 
+  devise_for :users
+    resources :products do
+    resources :comments
+  end
   
-  resources :products
+
     get 'static_pages/about'
 
     get 'static_pages/contact'
@@ -17,9 +16,9 @@ Rails.application.routes.draw do
 
     post 'static_pages/thank_you'
     
-
+    resources :users
     resources :orders, only: [:index, :show, :create, :destroy]
-   
+     
 
     
     # The priority is based upon order of creation: first created -> highest priority.
@@ -76,4 +75,5 @@ Rails.application.routes.draw do
     #     # (app/controllers/admin/products_controller.rb)
     #     resources :products
     #   end
+
 end
