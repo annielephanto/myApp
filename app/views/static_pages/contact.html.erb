@@ -1,16 +1,12 @@
-<div class="container-fluid">
-  <div class="row" id="row_title_contact">
-    <div class="col-xs-12">
-      <h1>Contact Us</h1>
-    </div>
-  </div>
-</div>
+
 
 <%= flash[:notice] %>
 
 <%= form_tag("/static_pages/thank_you") do %>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-6 col-xs-12">
+  <div class="form">
+    <h1> Contact me </h1>
     <div class="form-group">
       <%= label_tag :name %>
       <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
@@ -24,6 +20,7 @@
       <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
     </div>      
   </div>
+</div>
 </div>
 <%= submit_tag "Send" %>   
 <% end %>
