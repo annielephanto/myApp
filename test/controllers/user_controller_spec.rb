@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe UsersController, :type => :controller do
-   #let(:user) { User.create!(email: "annie55880000@gmail.com", password: "annie1204") }
+ 
     before do
       @user = FactoryGirl.create(:user)
       @user2 = FactoryGirl.create(:user)
@@ -13,8 +13,9 @@ describe UsersController, :type => :controller do
 				    	sign_in :user
 
              end
+            end
 
-             
+
           it "doesn't load the second user" do
           get :show, id: @user2.id
           expect(response).to have_http_status(302)
@@ -37,6 +38,8 @@ describe UsersController, :type => :controller do
                  end
               end
            end
+          end
+       
 
      
 					

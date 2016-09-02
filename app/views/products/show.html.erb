@@ -27,6 +27,19 @@
        <div class="rated" data-score="<%= @product.average_rating %>"></div> 
         </p>
       </div>
+
+        <%= form_tag "/payments/create" do %>
+          <script
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:pk_test_jorlSdkOLXxfzlYUu6ITiNil] %>"
+  data-amount="<%= (@product.price).to_i %>"
+  data-name="<%= @product.name %>"
+  data-description="<%= @product.description %>"
+  #data-image="<%= @product.image_url %>">
+</script>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+        <% end %>
+     
       
 
         <%= link_to 'Edit', edit_product_path(@product) %> |
@@ -46,12 +59,10 @@
 <div class="alert alert-info" style="display: none" role="alert">A new comment was posted!</div>
 
 
-
-
-
       
     </div>
   </div>
+  
 
 
 
