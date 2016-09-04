@@ -1,0 +1,9 @@
+<div class="payment-successful">
+  <h2> Thank you for your purchase </h2>
+
+  <h3> This is your new bike: </h3>
+  <p> <%= sanitize(@product.name) %> </p>
+  <% @product = Product.find(params[:product_id]) %>
+  <%= image_tag @product.image_url, class: "img-responsive image" %>
+
+</div>
