@@ -4,7 +4,7 @@
       <div class="col-md-6 col-xs-12">
       <% cache @product do %>
           <h1 class="title"><%= @product.name %></h1>
-        <% end %>
+      
   
         <div>
          <%= image_tag("spot.jpg", width: "350", class: "img-zoom") %>
@@ -21,6 +21,7 @@
 
         <h3>Color</h3>
         <p class="color"><%= @product.color %></p>
+          <% end %>
         <p>Average Rating:
         
         <div class="rated" data-score="<%= @product.average_rating %>" id="average_rating"></div>
